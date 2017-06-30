@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Train Scheduler </title>
+
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Bootstrap CDN-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Firebase Reference -->
+	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+	
+	<!-- Load moment.js -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+	<style>
+	body {
+	    background-image: url("assets/images/amtrak-train.jpg");
+
+	}
+
+	.container {
+	  margin-top: 15px;
+	  background-color: #fff;
+	  padding: 20px;
+
+	  box-shadow: 10px 15px 5px #272424;
+	 
+	}
+
+
+
+	.jumbotron {
+	    color: white;
+	    background-color: #a3a310;
+
+	}
+
+	.header-panel {
+		background: #22c1c3;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	}
+
+	
+	</style>
+</head>
+<body>
+	 <div class="container">
+	    <div class="panel panel-default header-panel">
+	         <div class="text-center">
+	           <h1>Anytime Is Train Time</h1> 
+	         </div>
+	         
+	       	<h4 class="text-center">Daily AMTRAK Train Schedule </h4> 
+	     </div>
+
+	     <div class="panel panel-primary">
+	         <div class="panel-heading ">Current Train Schedule </div>
+	         <div class="panel-body">
+	           <table class="table">
+	               <thead >
+	                   <tr class="success">
+	                     <th>Train Name</th>
+	                     <th>Destination</th>
+	                     <th>Frequncy (min)</th>
+	                     <th>Next Arrival</th>
+	                     <th>Minutes Away</th>
+	                   </tr>
+	               </thead>
+	               <tbody id="train-records">
+	<!--                    <tr>
+	                       <td></td>
+	                       <td></td>
+	                       <td></td>
+	                       <td></td>
+	                       <td></td>
+	                       <td></td>
+	                   </tr>
+	-->                </tbody>
+	           </table>
+
+	         </div>
+	     </div>
+
+	     <div class="panel panel-primary">
+	         <div class="panel-heading ">Add Train Schedule </div>
+	         <div class="panel-body">
+	             <form>
+	                 <div class="form-group ">
+	                     <label for="trainname">Train Name</label>
+	                     <input type="text" Id="trainname"class="form-control" >
+	                 </div>
+	                 <div class="form-group">
+	                   <label for="destination">Destination</label>
+	                   <input type="text" class="form-control" id="destination">
+	                 </div>
+	                 <div class="form-group">
+	                   <label for="firsttraintime">First Train Time (HH:mm - military time)</label>
+	                   <input type="text"  class="form-control" id="firsttraintime">
+	                 </div>
+
+	                 <div class="form-group">
+	                   <label for="frequncy">Frequncy</label>
+	                   <input type="text" class="form-control" id="frequncy">
+	                 </div>
+
+	                 <button type="submit" id="submit-record" class="btn btn-success btn-md">Submit</button>
+	             </form>
+	         </div>
+	     </div>
+	 </div>
+</body>
+</html>
